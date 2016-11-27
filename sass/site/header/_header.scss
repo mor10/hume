@@ -1,3 +1,14 @@
+.header-image {
+	max-height: 60vh;
+	overflow: hidden;
+	
+	img {
+		display: block;
+		width: 100vw;
+		
+	}
+}
+
 .site-header {
 	padding: 1em;
 	font-family: $font__sans;
