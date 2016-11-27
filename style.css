@@ -265,13 +265,24 @@ select,
 textarea {
 	color: #404040;
 	font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 18px;
+	font-size: 1.125rem;
 	line-height: 1.5;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-smoothing: antialiased;
+}
+
+@media screen and (min-width: 600px) {
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
