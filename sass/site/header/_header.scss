@@ -22,7 +22,6 @@
 
 .site-branding {
 	float: left;
-	align-items: baseline;
 	min-height: 65px;
 	
 	@media screen and (min-width: $query__small) {
@@ -30,10 +29,37 @@
 	}
 }
 
+.custom-logo-link {
+	float: left;
+	
+	&:focus,
+	&:hover {
+		
+		&>img {
+			outline: 1px solid white;
+		}
+	}
+	img {
+		display: block;
+		margin-right: 1em;
+		height: 65px;
+		width: auto;
+		max-width: inherit;
+	}
+}
+
+.site-branding__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 65px;
+}
+
 .site-title {
 	margin: 0 0 0 1em;
 	font-size: 1.6em;
 	font-weight: 900;
+	line-height: 1em;
 	-webkit-font-smoothing: auto;
 	font-smoothing: auto;
 
@@ -61,8 +87,5 @@
 	
 	@media screen and (min-width: $query__small) {
 		display: block;
-		margin: 0 0 0 1em;
-		padding-bottom: 1em;
-		
 	}
 }

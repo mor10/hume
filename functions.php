@@ -58,6 +58,13 @@ function hume_setup() {
 		'gallery',
 		'caption',
 	) );
+	
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', array(
+		'width'       => 90,
+		'height'      => 90,
+		'flex-width'  => true,
+	) );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'hume_custom_background_args', array(
