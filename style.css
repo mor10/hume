@@ -711,18 +711,6 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1.5em;
-	/* Make sure select elements fit in widgets. */
-}
-
-.widget select {
-	max-width: 100%;
-}
-
-/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -739,8 +727,78 @@ a:hover, a:active {
 }
 
 .site-content {
-	max-width: 960px;
+	max-width: 1180px;
 	margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-header {
+	padding: 1em;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	color: #fff;
+	background: #002254;
+}
+
+@media screen and (min-width: 600px) {
+	.site-header {
+		padding: 1em 2em;
+	}
+}
+
+.site-branding {
+	float: left;
+	-webkit-box-align: baseline;
+	    -ms-flex-align: baseline;
+	        align-items: baseline;
+	min-height: 65px;
+}
+
+@media screen and (min-width: 600px) {
+	.site-branding {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+}
+
+.site-title {
+	margin: 0 0 0 1em;
+	font-size: 1.6em;
+	font-weight: 900;
+	-webkit-font-smoothing: auto;
+	font-smoothing: auto;
+}
+
+.site-title a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.site-title :hover,
+.site-title :focus {
+	text-decoration: underline;
+}
+
+.site-title {
+	margin: 0;
+	padding: 0;
+}
+
+.site-description {
+	margin: 0;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: 100;
+}
+
+@media screen and (min-width: 600px) {
+	.site-description {
+		display: block;
+		margin: 0 0 0 1em;
+		padding-bottom: 1em;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -786,6 +844,30 @@ a:hover, a:active {
 	display: block;
 }
 
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 27, 2016, 1:32:02 PM
+    Author     : morten
+*/
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
