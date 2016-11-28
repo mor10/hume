@@ -683,11 +683,13 @@ a:hover, a:active {
 	display: inline;
 	float: left;
 	margin-right: 1.5em;
+	margin-bottom: 1em;
 }
 
 .alignright {
 	display: inline;
 	float: right;
+	margin-bottom: 1em;
 	margin-left: 1.5em;
 }
 
@@ -696,6 +698,7 @@ a:hover, a:active {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 1.5em;
 }
 
 /*--------------------------------------------------------------
@@ -1188,6 +1191,23 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Images
+--------------------------------------------------------------*/
+@media screen and (max-width: 600px) {
+	.wp-caption.aligncenter {
+		margin: 0 -1em;
+		max-width: 100vw;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+	.wp-caption.aligncenter {
+		margin: 0 -2em;
+		max-width: 100vw;
+	}
 }
 
 /*--------------------------------------------------------------

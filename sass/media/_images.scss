@@ -1,0 +1,17 @@
+.wp-caption {
+	
+	&.aligncenter {
+	
+		@media screen and (max-width: $query__small) {
+			margin: 0 -1em;
+			max-width: 100vw;
+		}
+		
+		@media screen and (min-width: $query__small) and (max-width: $size__max-width) {
+			margin: 0 -2em;
+			max-width: 100vw;
+		}
+	}
+	
+}
+
