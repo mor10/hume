@@ -104,7 +104,7 @@ function hume_fonts_url() {
 	$font_families = array();
 	
 	if ( 'off' !== $source_sans_pro ) {
-		$font_families[] = 'Source Sans Pro:400,400i,900';
+		$font_families[] = 'Source Sans Pro:400,400i,700,900';
 	}
 	
 	if ( 'off' !== $pt_serif ) {
