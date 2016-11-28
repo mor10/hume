@@ -10,6 +10,7 @@
 }
 
 .site-header {
+	position: relative;
 	padding: 1em;
 	font-family: $font__sans;
 	color: #fff;
@@ -81,11 +82,29 @@
 
 .site-description {
 	margin: 0;
-	font-size: 1em;
+	font-size: .9em;
 	font-style: italic;
 	font-weight: 100;
 	
 	@media screen and (min-width: $query__small) {
 		display: block;
+	}
+}
+
+@media screen and (min-width: $query__medium) {
+	.site-header {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.site-branding {
+		float: left;
+		width: 35%;
+	}
+
+	.main-navigation {
+		float: right;
+		width: 55%;
+		
 	}
 }
