@@ -12,12 +12,13 @@
 		width: 100%;
 		text-decoration: none;
 		padding: 1em;
-		border: 10px solid $color__interactive;
-		color: $color__interactive;
+		border: 1px solid hsl(0, 0%, 80%);
+		color: black;
 		
 		&:hover,
 		&:focus {
 			color: white;
+			border-color: $color__interactive;
 			background: $color__interactive;
 		}
 	}
@@ -69,6 +70,7 @@
 }
 
 .post-navigation {
+	
 	.meta-nav {
 		display: block;
 	}
@@ -80,10 +82,12 @@
 	.post-title {
 		font-size: 1.2em;
 		font-weight: 700;
+		border-bottom: 3px solid $color__interactive;
 	}
 	
 	a:hover .post-title,
 	a:focus .post-title{
-		text-decoration: underline;
+		border-bottom-color: white;
 	}
+	
 } 
