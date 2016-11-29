@@ -25,21 +25,21 @@ function hume_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'hume' ),
+		esc_html_x( 'Published %s', 'post date', 'hume' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'By %s', 'post author', 'hume' ),
+		esc_html_x( 'Written by %s', 'post author', 'hume' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
 	echo '<span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 	
 	if ( ! post_password_required() && comments_open() ) {
-		echo ' <span class="comments-link">';
+		echo ' <span class="comments-link"><span class="extra">Discussion </span>';
 		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'No comments yet<span class="screen-reader-text"> on %s</span>', 'rawls' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+		comments_popup_link( sprintf( wp_kses( __( 'No comments<span class="screen-reader-text"> on %s</span>', 'rawls' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
 	}
 	
@@ -49,7 +49,7 @@ function hume_posted_on() {
 			esc_html__( 'Edit %s', 'hume' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
-		'<span class="edit-link">',
+		'<span class="edit-link"><span class="extra">Admin </span>',
 		'</span>'
 	);
 

@@ -14,9 +14,12 @@
 		<?php hume_category_list(); ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' );	?>
 
+		<?php
+		if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
 		<div class="entry-meta">
 			<?php hume_posted_on(); ?>
 		</div><!-- .entry-meta -->
+		<?php } ?>
 		
 	</header><!-- .entry-header -->
 	
@@ -31,6 +34,17 @@
 	<?php } ?>
 
 	<article class="post-content">
+		
+		<?php
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) { ?>
+		<div class="post-content__wrap">
+			<div class="entry-meta">
+				<?php hume_posted_on(); ?>
+			</div><!-- .entry-meta -->
+		
+			<div class="post-content__body">
+		<?php } ?>
+		
 		<div class="entry-content">
 			<?php
 				the_content( sprintf(
@@ -49,7 +63,13 @@
 		<footer class="entry-footer">
 			<?php hume_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
-	
+		
+		<?php
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) { ?>
+			</div><!-- .post-content__body -->
+		</div><!-- .post-content__wrap -->
+		<?php } ?>
+		
 		<?php
 		// Previous/next post navigation.
 		the_post_navigation( array(
