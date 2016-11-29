@@ -1192,6 +1192,7 @@ button.dropdown-toggle {
 
 .entry-meta a,
 .entry-footer a {
+	font-weight: 600;
 	text-decoration: none;
 	color: #666666;
 }
