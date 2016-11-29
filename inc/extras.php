@@ -27,6 +27,8 @@ function hume_body_classes( $classes ) {
 	// Adds a class when the sidebar is displayed.
 	if ( is_active_sidebar( 'sidebar-1' ) ) {
 		$classes[] = 'has-sidebar';
+	} else {
+		$classes[] = 'no-sidebar';
 	}
 
 	return $classes;
