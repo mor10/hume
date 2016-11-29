@@ -1459,13 +1459,400 @@ button.dropdown-toggle {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.widget-area {
+	margin-top: 1.5em;
+}
+
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 2em;
+	padding: 0 0 2em;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	/* Make sure select elements fit in widgets. */
 }
 
+.widget ul,
+.widget ol {
+	padding: .7em 0 0;
+	margin-bottom: 0;
+	list-style-type: none;
+}
+
+.widget ul li,
+.widget ol li {
+	display: block;
+	line-height: 2em;
+}
+
+.widget ul li ul,
+.widget ul li ol,
+.widget ol li ul,
+.widget ol li ol {
+	margin-left: .5em;
+}
+
+@media screen and (min-width: 30em) {
+	.widget ul li ul,
+	.widget ul li ol,
+	.widget ol li ul,
+	.widget ol li ol {
+		margin-left: 1em;
+	}
+}
+
+.widget a {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.widget a:hover, .widget a:focus {
+	border-bottom: 3px solid #b51c35;
+}
+
 .widget select {
-	max-width: 100%;
+	width: 100%;
+	height: 2em;
+	padding: 10px;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	border: 1px solid #ccc;
+}
+
+.widget-title {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-size: 1.4em;
+}
+
+/* Archive and Categories widgets */
+.widget_archive li {
+	color: #7D7D7D;
+}
+
+.widget_categories .children {
+	padding-top: 0;
+}
+
+/* Search widget. */
+.widget_search .search-submit {
+	display: none;
+}
+
+/* Pages and Menu widgets */
+.widget_pages .children,
+.widget_nav_menu .sub-menu {
+	padding-top: 0;
+	padding-bottom: .5em;
+}
+
+.widget_pages a,
+.widget_nav_menu a {
+	display: block;
+	padding: 1em 0;
+	text-decoration: none;
+	border-bottom: 1px dashed gray;
+}
+
+.widget_pages a:hover, .widget_pages a:focus,
+.widget_nav_menu a:hover,
+.widget_nav_menu a:focus {
+	text-decoration: none;
+	border-bottom: 1px dashed gray;
+}
+
+.widget_pages li,
+.widget_nav_menu li {
+	padding: 0;
+}
+
+/* Meta widget */
+.widget_meta li {
+	padding: 0;
+}
+
+/* Recent comments */
+.widget_recent_comments li {
+	line-height: 1.3em;
+	padding-bottom: .5em;
+}
+
+.widget_recent_comments a:hover,
+.widget_recent_comments a:focus {
+	padding-left: 0;
+}
+
+/* RSS widget */
+.widget_rss li {
+	margin-bottom: 1em;
+}
+
+.widget li a.rsswidget {
+	padding-right: .5em;
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+.rss-date,
+.widget_rss cite {
+	color: #333;
+	font-size: .8em;
+}
+
+.rssSummary {
+	padding: .5em 0;
+	font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+	font-size: .8em;
+	line-height: 1.4em;
+}
+
+/* Search widget */
+.widget_search input[type="search"] {
+	box-sizing: border-box;
+	width: 100%;
+	padding: .5em 1em;
+	border: 1px solid #c3c3c3;
+	border-radius: 0;
+}
+
+/* Calendar widget */
+.widget_calendar {
+	font-weight: 400;
+}
+
+.widget_calendar caption {
+	padding: .5em 0;
+	font-size: 1em;
+	font-weight: 500;
+	text-align: left;
+}
+
+.widget_calendar thead {
+	background: transparent;
+	color: black;
+}
+
+.widget_calendar thead th {
+	border-bottom-width: 2px;
+}
+
+.widget_calendar td {
+	padding: .2em;
+	font-size: .8em;
+	text-align: center;
+	background: white;
+	border: 1px solid #cccccc;
+}
+
+.widget_calendar th {
+	border: none;
+	text-align: center;
+}
+
+.widget_calendar .pad {
+	background: #eaeaea;
+}
+
+.widget_calendar a {
+	font-weight: 900;
+	text-decoration: none;
+}
+
+/* Text widget */
+.textwidget {
+	/*font-size: .8em;*/
+	line-height: 1.6em;
+}
+
+/* Custom Recent Comments and Recent Posts widgets */
+.widget_rawls_recent_comments ul,
+.widget_rawls_recent_posts ul {
+	margin-top: 2em;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.widget_rawls_recent_comments li,
+.widget_rawls_recent_posts li {
+	position: relative;
+	padding: 0 0 1em 70px;
+	margin-bottom: 2em;
+	border-bottom: 1px dashed gray;
+}
+
+.widget_rawls_recent_comments li:last-child,
+.widget_rawls_recent_posts li:last-child {
+	margin-bottom: 0;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.widget_rawls_recent_comments a,
+.widget_rawls_recent_posts a {
+	display: block;
+	font-size: 1em;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.widget_rawls_recent_comments a:hover, .widget_rawls_recent_comments a:focus,
+.widget_rawls_recent_posts a:hover,
+.widget_rawls_recent_posts a:focus {
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.widget_rawls_recent_comments .post-icon,
+.widget_rawls_recent_posts .post-icon {
+	position: absolute;
+	left: 0;
+	width: 50px;
+	height: 50px;
+}
+
+/* Custom Recent Comments rules */
+.widget_rawls_recent_comments .post-icon img {
+	border-radius: 50px;
+}
+
+.widget_rawls_recent_comments .title,
+.widget_rawls_recent_comments .original-title {
+	margin-top: 0;
+	margin-bottom: .8em;
+	font-size: .7em;
+	line-height: 1.4em;
+}
+
+.widget_rawls_recent_comments .excerpt {
+	margin-top: 0;
+	margin-bottom: .8em;
+	font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+	font-size: .8em;
+	line-height: 1.4em;
+}
+
+.widget_rawls_recent_comments .excerpt:before {
+	content: "“";
+}
+
+.widget_rawls_recent_comments .excerpt:after {
+	content: "”";
+}
+
+.widget_rawls_recent_comments .original-title {
+	color: #7D7D7D;
+	font-weight: 500;
+}
+
+.widget_rawls_recent_comments .original-title span {
+	font-weight: normal;
+	font-style: italic;
+}
+
+.widget_rawls_recent_comments a:hover .original-title,
+.widget_rawls_recent_comments a:focus .original-title {
+	color: #000;
+	text-decoration: underline;
+}
+
+/* Custom Recent Posts rules */
+.widget_rawls_recent_posts .post-icon {
+	width: 50px;
+	height: 50px;
+	font-size: 1.3em;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	background: #333333;
+}
+
+.widget_rawls_recent_posts .title {
+	margin: 0;
+	font-size: .9em;
+	line-height: 1.4em;
+}
+
+.widget_rawls_recent_posts .meta {
+	margin: 0 0 .8em;
+	font-size: .7em;
+	text-transform: uppercase;
+	color: #7D7D7D;
+}
+
+.widget_rawls_recent_posts a:hover .title,
+.widget_rawls_recent_posts a:focus .title {
+	text-decoration: underline;
+}
+
+/* Footer widget stylings */
+.no-sidebar .footer-widget-area {
+	/*	max-width: $size__maxwidth;
+	margin: 0 auto;*/
+}
+
+.footer-widget-area {
+	margin: 0 2em 2em;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+}
+
+.footer-widget-area .widget {
+	float: left;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	margin: 0 1em 2em;
+	padding-top: 1em;
+}
+
+.footer-widget-area .widget a {
+	color: white;
+}
+
+.footer-widget-area .widget .original-title {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-widget-area .widget_rawls_recent_comments a:hover .original-title,
+.footer-widget-area .widget_rawls_recent_comments a:focus .original-title {
+	color: white;
+}
+
+.footer-widget-area .widget_rawls_recent_posts .meta {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-widget-area .widget_calendar thead {
+	color: white;
+}
+
+.footer-widget-area .rss-date, .footer-widget-area .widget_rss cite {
+	color: white;
+}
+
+@media screen and (min-width: 900px) {
+	.footer-widget-area {
+		/* If only one widget is displayed, make it full width. */
+		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
+		/* If 4 or more widgets are displayed, show three across when available. */
+	}
+	.footer-widget-area .widget:only-of-type {
+		width: 100%;
+	}
+	.footer-widget-area .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
+		-webkit-box-flex: 2;
+		    -ms-flex: 2;
+		        flex: 2;
+	}
+	.footer-widget-area .widget:nth-last-child(n+4),
+	.footer-widget-area .widget:nth-last-child(n+4) ~ .widget {
+		width: 30%;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 30%;
+		        flex: 1 1 30%;
+	}
 }
 
 /*--------------------------------------------------------------
