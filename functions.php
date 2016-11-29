@@ -172,7 +172,7 @@ function hume_scripts() {
 	
 	wp_enqueue_style( 'hume-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'hume-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'hume-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 	wp_localize_script( 'hume-navigation', 'humeScreenReaderText', array(
 		'expand' => __( 'Expand child menu', 'rawls' ),
 		'collapse' => __( 'Next', 'rawls' )
