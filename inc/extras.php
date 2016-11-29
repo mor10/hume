@@ -23,6 +23,11 @@ function hume_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
+	
+	// Adds a class when the sidebar is displayed.
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'has-sidebar';
+	}
 
 	return $classes;
 }
