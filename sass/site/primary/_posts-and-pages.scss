@@ -23,7 +23,9 @@
 		
 		&:focus,
 		&:hover {
-			border-bottom: 3px solid $color__interactive;
+			/*border-bottom: 3px solid $color__interactive;*/
+			background-color: $color__interactive;
+			color: white;
 		}
 	}
 }
@@ -36,6 +38,15 @@
 	
 	@media screen and (min-width: $query__medium) {
 		font-size: 3em;
+	}
+	
+	a {
+		text-decoration: none;
+		
+		&:hover,
+		&:focus {
+			border-bottom: 5px solid $color__interactive;
+		}
 	}
 }
 
@@ -95,6 +106,6 @@
 }
 
 .entry-footer {
-	margin: 3em 0 4em;
+	margin: 1.5em 0;
 	font-family: $font__sans;
 }
