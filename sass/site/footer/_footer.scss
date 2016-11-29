@@ -1,10 +1,18 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Nov 27, 2016, 1:32:02 PM
-    Author     : morten
-*/
-
+.site-footer {
+	padding: 2em;
+	font-family: $font__sans;
+	color: white;
+	text-align: center;
+	background: $color__interactive;
+	
+	a {
+		color: white;
+		font-weight: 600;
+		text-decoration: none;
+		
+		&:hover,
+		&:focus {
+			border-bottom: 3px solid white;
+		}
+	}
+}

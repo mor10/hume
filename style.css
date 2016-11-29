@@ -1225,6 +1225,42 @@ button.dropdown-toggle {
 	display: inline;
 }
 
+/* Featured Images */
+.full-bleed {
+	width: 100vw;
+	max-height: 1200px;
+	margin-top: 1em;
+	margin-left: -1em;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	overflow: hidden;
+}
+
+@media screen and (min-width: 600px) {
+	.full-bleed {
+		margin-left: -2em;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.full-bleed {
+		margin-top: 1.5em;
+		margin-right: -2em;
+	}
+}
+
+@media screen and (min-width: 1180px) {
+	.full-bleed {
+		margin-right: calc( ((-100vw + 1180px)/2) - 2em);
+		margin-left: calc( ((-100vw + 1180px)/2) - 2em);
+	}
+}
+
+.full-bleed img {
+	display: block;
+	margin: 0 auto;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -1859,15 +1895,24 @@ button.dropdown-toggle {
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Nov 27, 2016, 1:32:02 PM
-    Author     : morten
-*/
+.site-footer {
+	padding: 2em;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	color: white;
+	text-align: center;
+	background: #b51c35;
+}
+
+.site-footer a {
+	color: white;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.site-footer a:hover, .site-footer a:focus {
+	border-bottom: 3px solid white;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

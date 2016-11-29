@@ -26,6 +26,16 @@
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
+	
+	<?php
+	// Conditinoal Featured Image
+	if ( has_post_thumbnail() ) { ?>
+		<figure class="featured-image full-bleed">
+			<?php 
+				the_post_thumbnail( 'hume-full-bleed' );
+			?>
+		</figure><!-- .featured-image -->
+	<?php } ?>
 
 	<article class="post-content">
 		<div class="entry-content">
