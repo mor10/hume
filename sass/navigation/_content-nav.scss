@@ -91,3 +91,34 @@
 	}
 	
 } 
+
+
+.paging-navigation {
+	font-size: 90%;
+	
+	ul {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	
+	li {
+			margin: 0 .2em .4em;
+		}
+		
+	a,
+	span {
+		display: block;
+		padding: .5em 1em;
+		border: none;
+		background: white;
+	}
+	
+	.current {
+		font-weight: 700;
+	}
+	
+}

@@ -10,39 +10,46 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php hume_category_list(); ?>
-		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+	<?php
+	// Conditinoal Featured Image
+	if ( has_post_thumbnail() ) { ?>
+		<figure class="featured-image index-image">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+			<?php 
+				the_post_thumbnail( 'humescores-index' );
+			?>
+			</a>
+		</figure><!-- .featured-image -->
+	<?php } ?>
+	<div class="post__content">
+		<header class="entry-header">
+			<?php hume_category_list(); ?>
+			<?php
+				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			if ( 'post' === get_post_type() ) : ?>
+			<div class="entry-meta">
+				<?php hume_posted_on(); ?>
+			</div><!-- .entry-meta -->
+			<?php
+			endif; ?>
+		</header><!-- .entry-header -->
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php hume_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'hume' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hume' ),
-				'after'  => '</div>',
-			) );
+		<div class="entry-content">
+			<?php
+				the_excerpt();
+			?>
+		</div><!-- .entry-content -->
+		
+		<?php 
+		$read_more_link = sprintf(
+			/* translators: %s: Name of current post. */
+			wp_kses( __( 'Continue reading%s', 'humescores' ), array( 'span' => array( 'class' => array() ) ) ),
+			the_title( ' <span class="screen-reader-text">"', '"</span>', false )
+		);
 		?>
-	</div><!-- .entry-content -->
+		<div class="continue-reading">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php echo $read_more_link; ?></a>
+		</div>
 
-	<footer class="entry-footer">
-		<?php hume_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	</div><!-- .post-content -->
 </article><!-- #post-## -->
