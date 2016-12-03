@@ -950,6 +950,7 @@ a:hover, a:active {
 
 .index-image img {
 	display: block;
+	margin: 0 auto;
 }
 
 .index-image a:focus > img,
@@ -1652,6 +1653,19 @@ button.dropdown-toggle {
 
 .comment-form .required {
 	color: #D54E21;
+}
+
+.pingback {
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+}
+
+.pingback .comment-body {
+	padding: 1em 0;
+}
+
+.pingback a {
+	font-style: italic;
+	text-decoration: none;
 }
 
 /*--------------------------------------------------------------
