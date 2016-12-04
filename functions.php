@@ -72,6 +72,12 @@ function hume_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+	
+	/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, and column width.
+ 	 */
+	add_editor_style( array( 'inc/editor-style.css', hume_fonts_url() ) );
 }
 endif;
 add_action( 'after_setup_theme', 'hume_setup' );
