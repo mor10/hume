@@ -21,7 +21,7 @@ Posts and pages can have Featured Images.
 ### Licenses and External Assets
 hume is distributed under the terms of the GNU GPL v2
 
-hume' code base started out as _s (http://underscores.me) as it were on November 28, 2016.
+hume's code base started out as _s (http://underscores.me) as it were on November 28, 2016.
 
 ### Namesake
-Popperscores is named after philosopher David Hume.
+hume is named after philosopher [David Hume](https://en.wikipedia.org/wiki/David_Hume).
