@@ -278,8 +278,14 @@
 
 /* Custom Recent Comments and Recent Posts widgets */
 
-.site-content .widget_hume_recent_comments li,
-.site-content .widget_hume_recent_posts li {
+.content-area .widget_hume_recent_comments li,
+.content-area .widget_hume_recent_posts li {
+	a {
+		color: black;
+	}
+}
+.widget_hume_recent_comments li,
+.widget_hume_recent_posts li {
 	position: relative;
 	padding: 0 0 1em 70px;
 	margin-bottom: 2em;
@@ -288,13 +294,13 @@
 
 .widget_hume_recent_comments,
 .widget_hume_recent_posts {
-	
+
 	ul {
 		margin-top: 2em;
 		margin-bottom: 0;
 		padding-bottom: 0;
 	}
-	
+
 	li:last-child {
 		margin-bottom: 0;
 		border-bottom: none;
@@ -304,14 +310,14 @@
 	a {
 		display: block;
 		font-size: 1em;
-		
+
 		&:focus,
 		&:hover{
 			text-decoration: none;
 			border-bottom: none;
 		}
 	}
-	
+
 	.post-icon {
 		position: absolute;
 		left: 0;
@@ -323,12 +329,12 @@
 
 
 .widget_hume_recent_comments {
-	
+
 	.post-icon img {
 		border-radius: 50px;
 	}
-	
-	.title, 
+
+	.title,
 	.original-title {
 		margin-top: 0;
 		margin-bottom: .8em;
@@ -336,7 +342,7 @@
 		font-size: .7em;
 		line-height: 1.4em;
 	}
-	
+
 	.excerpt {
 		margin-top: 0;
 		margin-bottom: .8em;
@@ -344,7 +350,7 @@
 		font-size: .8em;
 		font-weight: 400;
 		line-height: 1.4em;
-		
+
 		&:before {
 			content: "“";
 		}
@@ -352,17 +358,17 @@
 			content: "”";
 		}
 	}
-	
+
 	.original-title {
 		color: #7D7D7D;
 		font-weight: 500;
-		
+
 		span {
 			font-weight: normal;
 			font-style: italic;
 		}
 	}
-	
+
 	a:focus,
 	a:hover {
 		.original-title {
@@ -371,15 +377,23 @@
 		}
 		.title,
 		.excerpt {
-			color: black;
+			color: inherit;
 		}
 	}
 }
 
+.footer-widgets .widget_hume_recent_comments {
+	a:focus,
+	a:hover {
+		.original-title {
+			color: white;
+		}
+	}
+}
 
 /* Custom Recent Posts widget */
 .widget_hume_recent_posts {
-	
+
 	.post-icon {
 		width: 50px;
 		height: 50px;
@@ -406,5 +420,16 @@
 	a:hover .title,
 	a:focus .title {
 		text-decoration: underline;
+	}
+}
+
+.footer-widgets .widget_hume_recent_comments,
+.footer-widgets .widget_hume_recent_posts {
+	li {
+		border-bottom: 1px  dotted white;
+
+		&:last-of-type {
+			border-bottom: none;
+		}
 	}
 }

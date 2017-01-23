@@ -2096,8 +2096,13 @@ button.dropdown-toggle {
 }
 
 /* Custom Recent Comments and Recent Posts widgets */
-.site-content .widget_hume_recent_comments li,
-.site-content .widget_hume_recent_posts li {
+.content-area .widget_hume_recent_comments li a,
+.content-area .widget_hume_recent_posts li a {
+	color: black;
+}
+
+.widget_hume_recent_comments li,
+.widget_hume_recent_posts li {
 	position: relative;
 	padding: 0 0 1em 70px;
 	margin-bottom: 2em;
@@ -2189,7 +2194,12 @@ button.dropdown-toggle {
 .widget_hume_recent_comments a:focus .excerpt,
 .widget_hume_recent_comments a:hover .title,
 .widget_hume_recent_comments a:hover .excerpt {
-	color: black;
+	color: inherit;
+}
+
+.footer-widgets .widget_hume_recent_comments a:focus .original-title,
+.footer-widgets .widget_hume_recent_comments a:hover .original-title {
+	color: white;
 }
 
 /* Custom Recent Posts widget */
@@ -2219,6 +2229,16 @@ button.dropdown-toggle {
 .widget_hume_recent_posts a:hover .title,
 .widget_hume_recent_posts a:focus .title {
 	text-decoration: underline;
+}
+
+.footer-widgets .widget_hume_recent_comments li,
+.footer-widgets .widget_hume_recent_posts li {
+	border-bottom: 1px  dotted white;
+}
+
+.footer-widgets .widget_hume_recent_comments li:last-of-type,
+.footer-widgets .widget_hume_recent_posts li:last-of-type {
+	border-bottom: none;
 }
 
 /*--------------------------------------------------------------
