@@ -7,17 +7,11 @@ textarea {
 	font-family: $font__serif;
 	@include font-size(.9);
 	line-height: $font__line-height-body;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-smoothing: antialiased;
 	
 	@media screen and (min-width: $query__small) {
 		@include font-size(1);
 	}
 }
-
-
 
 @import "headings";
 

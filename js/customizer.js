@@ -48,15 +48,17 @@
 			} );
 		} );
 	} );
-	
+
+	// Background color for header and footer.
 	wp.customize( 'theme_bg_color', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-header,.site-footer' ).css( {
+			$( '.site-header, .site-footer' ).css( {
 				'background-color': to
 			} );
 		} );
 	} );
 	
+	// Interactive color for links etc.
 	wp.customize( 'interactive_color', function( value ) {
 		value.bind( function( to ) {
 			$( 'a:hover,a:focus,a:active,.page-content a:focus, .page-content a:hover,.entry-content a:focus,.entry-content a:hover,.entry-summary a:focus,.entry-summary a:hover,.comment-content a:focus,.comment-content a:hover,.cat-links a' ).css( {
@@ -70,5 +72,4 @@
 			} );
 		} );
 	} );
-	
 } )( jQuery );

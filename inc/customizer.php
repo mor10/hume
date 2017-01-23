@@ -16,85 +16,87 @@ function hume_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
 	/**
-	* Custom Customizer Customizations
-	*/
-
-	// Create header and footer color setting
-	$wp_customize->add_setting( 'theme_bg_color' , array(
-		'default' => '#002254',
-		'transport' => 'postMessage',
-		'type' => 'theme_mod',
-		'sanitize_callback' => 'sanitize_hex_color',
-		'transport'   => 'postMessage',
-	) );
+	 * Custom Customizer Customizations
+	 */
 	
-	// Add the controls
+	// Setting for header and footer background color
+	$wp_customize->add_setting( 'theme_bg_color', array(
+		'default'			=> '#002254',
+		'transport'			=> 'postMessage',
+		'type'				=> 'theme_mod',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	
+	// Control for header and footer background color.
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'header_bg_color', array(
-				'label' => __( 'Header and footer background color', 'humescores' ),
-				'section' => 'colors',
-				'settings' => 'theme_bg_color'
-			)
+			'theme_bg_color', 
+				array(
+					'label'		=> __( 'Header and footer background color', 'hume'),
+					'section'	=> 'colors',
+					'settings'	=> 'theme_bg_color'
+				)
 		)
 	);
 	
 	// Create interactive color setting
-	$wp_customize->add_setting( 'interactive_color' , array(
-		'default'     => '#b51c35',
-		'transport'         => 'postMessage',
-		'type' => 'theme_mod',
-		'sanitize_callback'    => 'sanitize_hex_color',
-		'transport'   => 'postMessage',
-	) );
+	$wp_customize->add_setting( 'interactive_color' , 
+		array(
+			'default'			=> '#b51c35',
+			'transport'			=> 'postMessage',
+			'type'				=> 'theme_mod',
+			'sanitize_callback'	=> 'sanitize_hex_color',
+			'transport'			=> 'postMessage',
+		)
+	);
 	
 	// Add the controls
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'link_color', array(
-				'label' => __( 'Interactive color (links etc)', 'humescores' ),
-				'section' => 'colors',
-				'settings' => 'interactive_color'
+			'interactive_color', array(
+				'label'		=> __( 'Interactive color (links etc)', 'hume' ),
+				'section'	=> 'colors',
+				'settings'	=> 'interactive_color'
 			)
 		)
 	);
 	
 	// Add option to select index content
-	$wp_customize->add_section( 'theme_options',
+	$wp_customize->add_section( 'theme_options', 
 		array(
-			'title' => __( 'Theme Options', 'humescores' ),
-			'priority' => 95,
-			'capability' => 'edit_theme_options',
-			'description' => __( 'Change how much of a post is displayed on index and archive pages.', 'humescores' )
+			'title'			=> __( 'Theme Options', 'hume' ),
+			'priority'		=> 95,
+			'capability'	=> 'edit_theme_options',
+			'description'	=> __( 'Change how much of a post is displayed on index and archive pages.', 'hume' )
 		)
 	);
 	
 	// Create excerpt or full content settings
 	$wp_customize->add_setting(	'length_setting',
 		array(
-			'default' => 'excerpt',
-			'type' => 'theme_mod',
-			'sanitize_callback' => 'humescores_sanitize_length', // Sanitization function appears further down
-			'transport' => 'postMessage'
+			'default'			=> 'excerpt',
+			'type'				=> 'theme_mod',
+			'sanitize_callback' => 'hume_sanitize_length', // Sanitization function appears further down
+			'transport'			=> 'postMessage'
 		)
 	);
 
 	// Add the controls
-	$wp_customize->add_control(	'humescores_length_control',
+	$wp_customize->add_control(	'hume_length_control',
 		array(
-			'type' => 'radio',
-			'label' => __( 'Index/archive displays', 'humescores' ),
-			'section' => 'theme_options',
-			'choices' => array(
-				'excerpt' => __( 'Excerpt (default)', 'humescores' ),
-				'excerpt' => __( 'Excerpt', 'humescores' ),
-				'full-content' => __( 'Full content', 'humescores' )
+			'type'		=> 'radio',
+			'label'		=> __( 'Index/archive displays', 'hume' ),
+			'section'	=> 'theme_options',
+			'choices'	=> array(
+				'excerpt'		=> __( 'Excerpt (default)', 'hume' ),
+				'full-content'	=> __( 'Full content', 'hume' )
 			),
-			'settings' => 'length_setting' // Matches setting ID from above
+			'settings'	=> 'length_setting' // Matches setting ID from above
 		)
 	);
+	
 }
 add_action( 'customize_register', 'hume_customize_register' );
 
@@ -106,23 +108,19 @@ function hume_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'hume_customize_preview_js' );
 
+
 /**
  * Sanitize length options:
  * If something goes wrong and one of the two specified options are not used,
  * apply the default (excerpt).
  */
 
-function humescores_sanitize_length( $value ) {
+function hume_sanitize_length( $value ) {
     if ( ! in_array( $value, array( 'excerpt', 'full-content' ) ) ) {
         $value = 'excerpt';
 	}
     return $value;
 }
-
-
-/**
- * Apply color customizations.
- */
 
 
 if ( ! function_exists( 'hume_header_style' ) ) :
@@ -133,7 +131,7 @@ if ( ! function_exists( 'hume_header_style' ) ) :
  */
 function hume_header_style() {
 	$header_text_color = get_header_textcolor();
-	$header_bg_color = get_theme_mod('theme_bg_color');
+	$header_bg_color = get_theme_mod( 'theme_bg_color' );
 	$interactive_color = get_theme_mod('interactive_color');
 
 	/*
@@ -162,7 +160,6 @@ function hume_header_style() {
 			.site-description {
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}
-
 		<?php endif; ?>
 			.main-navigation a,
 			button.dropdown-toggle,
@@ -183,7 +180,7 @@ function hume_header_style() {
 				background-color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}
 		</style>
-	<?php
+		<?php
 	}
 	
 	/*
@@ -197,7 +194,7 @@ function hume_header_style() {
 			}
 		</style>
 	<?php
-	} 
+	}
 	
 	/*
 	 * Do we have a custom interactive color?
@@ -274,6 +271,5 @@ function hume_header_style() {
 		</style>
 	<?php
 	} 
-	
 }
 endif;

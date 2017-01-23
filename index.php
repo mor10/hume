@@ -14,11 +14,12 @@
 
 get_header(); ?>
 
+<?php if ( have_posts() ) : ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
 				<header>
@@ -40,13 +41,13 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
+			the_posts_pagination( array(
+				'prev_text' => hume_get_svg( array( 'icon' => 'arrow-long-left', 'fallback' => true ) ) . __( 'Older', 'hume' ),
+				'next_text' => __( 'Newer', 'hume' ) . hume_get_svg( array( 'icon' => 'arrow-long-right' , 'fallback' => true ) ),
+				'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'hume' ) . '</span>',
+			));
+			
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
@@ -54,3 +55,11 @@ get_header(); ?>
 <?php
 get_sidebar();
 get_footer();
+
+
+else :
+
+	get_template_part( 'template-parts/content', 'none' );
+	return;
+
+endif; 

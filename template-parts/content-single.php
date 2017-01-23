@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying single posts.
+ * Template part for displaying posts.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -9,41 +9,44 @@
 
 ?>
 
-<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php hume_category_list(); ?>
-		<?php the_title( '<h1 class="entry-title">', '</h1>' );	?>
-
+		<?php hume_the_category_list(); ?>
 		<?php
-		if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+		if ( is_single() ) :
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		else :
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
+
+		if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 		<div class="entry-meta">
 			<?php hume_posted_on(); ?>
 		</div><!-- .entry-meta -->
-		<?php } ?>
-		
+		<?php
+		endif; ?>
 	</header><!-- .entry-header -->
 	
 	<?php
-	// Conditinoal Featured Image
 	if ( has_post_thumbnail() ) { ?>
-		<figure class="featured-image full-bleed">
-			<?php 
-				the_post_thumbnail( 'hume-full-bleed' );
-			?>
-		</figure><!-- .featured-image -->
+	<figure class="featured-image full-bleed">
+		<?php
+		the_post_thumbnail('hume-full-bleed');
+		?>
+	</figure><!-- .featured-image full-bleed -->
 	<?php } ?>
 
-	<article class="post-content">
+	<section class="post-content">
 		
 		<?php
-		if ( ! is_active_sidebar( 'sidebar-1' ) ) { ?>
+		if ( !is_active_sidebar( 'sidebar-1' ) ) : ?>
 		<div class="post-content__wrap">
 			<div class="entry-meta">
 				<?php hume_posted_on(); ?>
 			</div><!-- .entry-meta -->
-		
 			<div class="post-content__body">
-		<?php } ?>
+		<?php
+		endif; ?>
 		
 		<div class="entry-content">
 			<?php
@@ -63,35 +66,24 @@
 		<footer class="entry-footer">
 			<?php hume_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
-		
+
 		<?php
-		if ( ! is_active_sidebar( 'sidebar-1' ) ) { ?>
+		if ( !is_active_sidebar( 'sidebar-1' ) ) : ?>
 			</div><!-- .post-content__body -->
 		</div><!-- .post-content__wrap -->
-		<?php } ?>
+		<?php endif; ?>
 		
 		<?php
-		// Previous/next post navigation.
-		the_post_navigation( array(
-			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'hume' ) . '</span> ' .
-				'<span class="screen-reader-text">' . __( 'Next post:', 'hume' ) . '</span> ' .
-				'<span class="post-title">%title</span>',
-			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'hume' ) . '</span> ' .
-				'<span class="screen-reader-text">' . __( 'Previous post:', 'hume' ) . '</span> ' .
-				'<span class="post-title">%title</span>',
-		) );
+		hume_post_navigation();
 
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) :
 			comments_template();
 		endif;
 		?>
-		
-	</article><!-- .post-content -->
+	</section><!-- .post-content -->
 	
-	<?php 
+	<?php
 	get_sidebar();
 	?>
-</section><!-- #post-## -->
-
-
+</article><!-- #post-## -->

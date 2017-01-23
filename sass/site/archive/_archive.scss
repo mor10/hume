@@ -1,5 +1,5 @@
-.archive {
-	background-color: $color__background-pre;
+.archive-view {
+	background-color: #eee;
 	
 	.post,
 	.page {
@@ -18,31 +18,76 @@
 				justify-content: space-between;
 				flex-wrap: wrap;
 			}
-
+			
 			.page-header {
 				width: 100%;
 				flex: 1 0 100%;
 			}
-
 			.content-area {
 				width: $size__ratio-large;
 			}
-
+			
 			.widget-area {
 				width: $size__ratio-small;
 			}
+			
 		}
 	}
-	
+}
+
+.page-header {
+	font-family: $font__sans;
 }
 
 .page-title {
-	margin-top: 0;
-	margin-bottom: .5em;
+	margin: 0 0 .5em;
+}
+
+.archive-description {
+	margin: -1em 0 2em;
+}
+
+/* For content-none.php */
+.search,
+.error-404 {
+	
+	.page-content {
+		margin-bottom: 2em;
+		padding: 1em 2em;
+		font-family: $font__sans;
+		color: white;
+		background: $color__interactive;
+	}
+	
+	input[type="search"] {
+		padding: .5em;
+	}
+	input[type="submit"] {
+		border-color: white;
+		color: white;
+		
+		&:focus,
+		&:hover {
+			color: black;
+		}
+	}
+}
+
+.sticky::before {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 2em 2em 0;
+    border-color: #eee #eee white;
+    border-style: solid;
+    box-shadow: -1px 2px 2px hsla(0, 0%, 10%, .1);
 }
 
 .index-image {
-	
 	img {
 		display: block;
 		margin: 0 auto;

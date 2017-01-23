@@ -4,15 +4,14 @@
 .entry-content:after,
 .comment-content:before,
 .comment-content:after,
-
-.site-footer:before,
-.site-footer:after {
+.site-content:before,
+.site-content:after {
 	@include clearfix;
 }
 
 .clear:after,
 .entry-content:after,
 .comment-content:after,
-.site-header:after {
+.site-content:after {
 	@include clearfix-after;
 }

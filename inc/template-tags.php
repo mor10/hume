@@ -36,10 +36,10 @@ function hume_posted_on() {
 
 	echo '<span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 	
-	if ( ! post_password_required() && comments_open() ) {
+	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo ' <span class="comments-link"><span class="extra">Discussion </span>';
 		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'No comments<span class="screen-reader-text"> on %s</span>', 'rawls' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'hume' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
 	}
 	
@@ -49,46 +49,42 @@ function hume_posted_on() {
 			esc_html__( 'Edit %s', 'hume' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
-		'<span class="edit-link"><span class="extra">Admin </span>',
+		' <span class="edit-link"><span class="extra">Admin </span>',
 		'</span>'
 	);
 
 }
 endif;
 
-if ( ! function_exists( 'hume_category_list' ) ) :
-/**
- * Prints HTML with meta information for categories.
- */
-function hume_category_list() {
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'hume' ) );
-		if ( $categories_list && hume_categorized_blog() ) {
-			printf( '<span class="cat-links"><span class="screen-reader-text">' . esc_html__( 'Posted in ', 'hume' ) . '</span>' . $categories_list . '</span>' ); // WPCS: XSS OK.
-		}
-	}
-}
-	
-endif;
-
 if ( ! function_exists( 'hume_entry_footer' ) ) :
 /**
- * Prints HTML with meta information tags.
+ * Prints HTML with meta information for the categories, tags and comments.
  */
 function hume_entry_footer() {
-	// Hide category and tag text for pages.
+	// Hide tag text for pages.
 	if ( 'post' === get_post_type() ) {
+
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'hume' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tags: %1$s', 'hume' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'hume' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 }
 endif;
+
+/**
+ * Display category list
+ */
+
+function hume_the_category_list() {
+	/* translators: used between list items, there is a space after the comma */
+	$categories_list = get_the_category_list( esc_html__( ', ', 'hume' ) );
+	if ( $categories_list && hume_categorized_blog() ) {
+		printf( '<span class="cat-links">' . esc_html__( '%1$s', 'hume' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+	}
+}
 
 /**
  * Returns true if a blog has more than 1 category.
@@ -133,63 +129,33 @@ function hume_category_transient_flusher() {
 add_action( 'edit_category', 'hume_category_transient_flusher' );
 add_action( 'save_post',     'hume_category_transient_flusher' );
 
+
 /**
- * Customize ellipsis at end of excerpts
+ * Post navigation (previous / next post) for single posts.
  */
-function humescores_excerpt_more( $more ) {
+function hume_post_navigation() {
+	the_post_navigation( array(
+		'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'hume' ) . '</span> ' .
+			'<span class="screen-reader-text">' . __( 'Next post:', 'hume' ) . '</span> ' .
+			'<span class="post-title">%title</span>',
+		'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'hume' ) . '</span> ' .
+			'<span class="screen-reader-text">' . __( 'Previous post:', 'hume' ) . '</span> ' .
+			'<span class="post-title">%title</span>',
+	) );
+}
+
+/**
+ * Customize ellipsis at end of excerpts.
+ */
+function hume_excerpt_more( $more ) {
 	return "…";
 }
-add_filter('excerpt_more', 'humescores_excerpt_more');
+add_filter( 'excerpt_more', 'hume_excerpt_more' );
 
-
-if ( ! function_exists( 'humescores_paging_nav' ) ) :
 /**
- * Display navigation to next/previous set of posts when applicable.
- * Based on paging nav function from Twenty Fourteen
+ * Filter excerpt length to 100 words.
  */
-
-function humescores_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-
-	$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-	$pagenum_link = html_entity_decode( get_pagenum_link() );
-	$query_args   = array();
-	$url_parts    = explode( '?', $pagenum_link );
-
-	if ( isset( $url_parts[1] ) ) {
-		wp_parse_str( $url_parts[1], $query_args );
-	}
-
-	$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
-	$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
-
-	$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
-	$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
-
-	// Set up paginated links.
-	$links = paginate_links( array(
-		'base'     => $pagenum_link,
-		'format'   => $format,
-		'total'    => $GLOBALS['wp_query']->max_num_pages,
-		'current'  => $paged,
-		'mid_size' => 1,
-		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( 'Previous', 'humescores' ),
-		'next_text' => __( 'Next', 'humescores' ),
-		'type'      => 'list',
-	) );
-
-	if ( $links ) :
-
-		?>
-		<nav class="navigation paging-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'humescores' ); ?></h1>
-				<?php echo $links; ?>
-		</nav><!-- .navigation -->
-		<?php
-		endif;
-	}
-endif;
+function hume_excerpt_length( $length ) {
+	return 100;
+}
+add_filter( 'excerpt_length', 'hume_excerpt_length');

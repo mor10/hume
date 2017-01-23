@@ -31,5 +31,3 @@ function hume_custom_header_setup() {
 	) ) );
 }
 add_action( 'after_setup_theme', 'hume_custom_header_setup' );
-
-

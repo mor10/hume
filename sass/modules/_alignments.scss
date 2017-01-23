@@ -2,18 +2,15 @@
 	display: inline;
 	float: left;
 	margin-right: 1.5em;
-	margin-bottom: 1em;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-bottom: 1em;
 	margin-left: 1.5em;
 }
 
 .aligncenter {
 	clear: both;
 	@include center-block;
-	margin-bottom: 1.5em;
 }
