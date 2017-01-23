@@ -228,7 +228,7 @@
 
 	.widget {
 		flex: 1;
-		margin: 0 1em 2em;
+		margin: 0 2em 2em;
 		padding-top: 1em;
 
 		.original-title {
@@ -250,7 +250,12 @@
 		color: black;
 	}
 
-	@media screen and (min-width: $query__medium) {
+}
+
+.footer-widget-area__wrap {
+	margin: 0 auto;
+
+	@media screen and (min-width: $size__max-width) {
 		/* Use flex to create a responsive layout */
 		display: flex;
 		flex-wrap: wrap;
@@ -274,6 +279,9 @@
 		}
 	}
 
+	@media screen and (min-width: 90em ) {
+		max-width: 70em;
+	}
 }
 
 /* Custom Recent Comments and Recent Posts widgets */
