@@ -212,7 +212,11 @@ function hume_header_style() {
 			.comment-content a:focus,
 			.comment-content a:hover,
 			.cat-links a,
-			.social-menu ul a {
+			.social-menu ul a,
+			.widget_hume_recent_posts a:hover .title,
+			.widget_hume_recent_posts a:focus .title,
+			.widget_hume_recent_comments a:focus .original-title,
+			.widget_hume_recent_comments a:hover .original-title {
 				color: <?php echo esc_attr( $interactive_color ); ?>;
 			}
 

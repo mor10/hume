@@ -423,6 +423,13 @@
 	}
 }
 
+.footer-widgets .widget_hume_recent_posts {
+	a:hover .title,
+	a:focus .title {
+		color: white;
+	}
+}
+
 .footer-widgets .widget_hume_recent_comments,
 .footer-widgets .widget_hume_recent_posts {
 	li {

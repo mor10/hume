@@ -2231,6 +2231,11 @@ button.dropdown-toggle {
 	text-decoration: underline;
 }
 
+.footer-widgets .widget_hume_recent_posts a:hover .title,
+.footer-widgets .widget_hume_recent_posts a:focus .title {
+	color: white;
+}
+
 .footer-widgets .widget_hume_recent_comments li,
 .footer-widgets .widget_hume_recent_posts li {
 	border-bottom: 1px  dotted white;
