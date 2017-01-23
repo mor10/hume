@@ -1751,6 +1751,7 @@ button.dropdown-toggle {
 .site-footer__wrap {
 	max-width: 1080px;
 	margin: 0 auto;
+	padding: 0 2em;
 }
 
 @media screen and (min-width: 900px) {
@@ -1765,7 +1766,7 @@ button.dropdown-toggle {
 }
 
 .site-info {
-	margin: 1em 0;
+	margin: 1em 0 1em auto;
 	-ms-flex-item-align: center;
 	    -ms-grid-row-align: center;
 	    align-self: center;
@@ -1809,6 +1810,7 @@ button.dropdown-toggle {
 .social-menu ul a:hover, .social-menu ul a:focus {
 	text-decoration: underline;
 	opacity: 1;
+	cursor: pointer;
 }
 
 /*--------------------------------------------------------------
