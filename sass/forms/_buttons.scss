@@ -11,12 +11,10 @@ input[type="submit"] {
 	line-height: 1;
 	padding: .5em 1em;
 
-	&:hover,
+	&:hover ,
 	&:active,
 	&:focus {
-		background: #fff;
-		color: #000;
+		background: white;
+		color: black;
 	}
-
-	
 }

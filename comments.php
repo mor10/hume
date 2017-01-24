@@ -28,31 +28,19 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One comment:', '%1$s comments:', get_comments_number(), 'hume' ) ),
+					esc_html( _nx( 'One comment', '%1$s comments', get_comments_number(), 'comments title', 'hume' ) ),
 					number_format_i18n( get_comments_number() ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'hume' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'hume' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'hume' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
-
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
-					'avatar_size'  => '96',
+					'avatar_size'=> '96',
 				) );
 			?>
 		</ol><!-- .comment-list -->

@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <?php
-	if ( have_posts() ) : ?>
+if ( have_posts() ) : ?>
 
 	<header class="page-header">
 		<?php
@@ -18,13 +18,17 @@ get_header(); ?>
 			the_archive_description( '<div class="archive-description">', '</div>' );
 		?>
 	</header><!-- .page-header -->
-<?php endif; ?>
+
+<?php
+else :
+
+	get_template_part( 'template-parts/content', 'none' );
+	return;
+
+endif; ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-		<?php
-		if ( have_posts() ) : ?>
 
 			<?php
 			/* Start the Loop */
@@ -39,13 +43,13 @@ get_header(); ?>
 
 			endwhile;
 
-			humescores_paging_nav();
+			the_posts_pagination( array(
+				'prev_text' => hume_get_svg( array( 'icon' => 'arrow-long-left', 'fallback' => true ) ) . __( 'Newer', 'hume' ),
+				'next_text' => __( 'Older', 'hume' ) . hume_get_svg( array( 'icon' => 'arrow-long-right' , 'fallback' => true ) ),
+				'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'hume' ) . '</span>',
+			));
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

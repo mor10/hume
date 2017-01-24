@@ -5,16 +5,14 @@
 	img {
 		display: block;
 		width: 100vw;
-		
 	}
 }
-
 .site-header {
 	position: relative;
 	padding: 1em;
 	font-family: $font__sans;
 	color: #fff;
-	background: $color__skin;
+	background-color: $color__skin;
 	
 	@media screen and (min-width: $query__small) {
 		padding: 1em 2em;
@@ -22,30 +20,16 @@
 }
 
 .site-branding {
-	float: left;
+	display: flex;
 	min-height: 65px;
-	
-	@media screen and (min-width: $query__small) {
-		display: flex;
-	}
 }
 
 .custom-logo-link {
-	float: left;
-	
-	&:focus,
-	&:hover {
-		
-		&>img {
-			outline: 1px solid white;
-		}
-	}
+	margin-right: 1em;
 	img {
 		display: block;
-		margin-right: 1em;
 		height: 65px;
 		width: auto;
-		max-width: inherit;
 	}
 }
 
@@ -57,27 +41,21 @@
 }
 
 .site-title {
-	margin: 0 0 0 1em;
+	margin: 0;
+	padding: 0;
 	font-size: 1.6em;
 	font-weight: 900;
 	line-height: 1em;
-	-webkit-font-smoothing: auto;
-	font-smoothing: auto;
-
+	
 	a {
-		color: #fff;
+		color: white;
 		text-decoration: none;
+		
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
 	}
-
-	:hover,
-	:focus {
-		text-decoration: underline;
-	}
-}
-
-.site-title {
-	margin: 0;
-	padding: 0;
 }
 
 .site-description {
@@ -85,10 +63,6 @@
 	font-size: .9em;
 	font-style: italic;
 	font-weight: 100;
-	
-	@media screen and (min-width: $query__small) {
-		display: block;
-	}
 }
 
 @media screen and (min-width: $query__medium) {
@@ -98,13 +72,16 @@
 	}
 	
 	.site-branding {
-		float: left;
 		width: 35%;
+		flex: 1 0 auto;
 	}
-
-	.main-navigation {
-		float: right;
+	
+	.site-navigation {
 		width: 55%;
-		
 	}
 }
+
+/*
+Header Menu
+*/
+@import "header-menu";

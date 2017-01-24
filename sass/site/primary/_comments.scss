@@ -184,7 +184,7 @@
 
 .bypostauthor .avatar {
 	box-sizing: content-box;
-	border: 5px solid #c3c3c3;
+	border: 5px solid $color__interactive;
 	margin-top: -5px;
 	margin-left: -5px;
 }
@@ -253,3 +253,4 @@
 		text-decoration: none;
 	}
 }
+

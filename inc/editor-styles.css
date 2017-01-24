@@ -1,24 +1,21 @@
-/*
-Theme Name: Popper
-Description: Used to style the TinyMCE editor.
-*/
+/**
+ * Theme: hume
+ * Editor styles for TinyMCE
+ */
+
 html {
-    padding: 0 2em;
+	padding: 0 2em;
 }
 
 body {
-    max-width: 39em;
-    margin: 0 auto;
-    color: #000;
-	font-family: "PT Serif",Georgia,Cambria,"Times New Roman",Times,serif;
-	font-size: 20px;
-	font-size: 1.25rem;
+	max-width: 700px;
+	margin: 0 auto;
+	color: black;
+	font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-size: 1.125rem;
+	line-height: 1.5;
 }
-
-/**
- * Typography
- */
-
 
 h1, h2, h3, h4, h5, h6 {
 	margin-top: .75em;
@@ -62,7 +59,7 @@ dfn, cite, em, i {
 
 blockquote {
 	position: relative;
-	margin: 0 0 1em 0;
+	margin: 0 0 1em;
 	background: #eee;
 	padding: 1em 2em .5em 5em;
 	font-style: italic;
@@ -70,17 +67,17 @@ blockquote {
 
 blockquote:before {
 	position: absolute;
+	top: -.2em;
+	left: -.13em;
 	content: "“";
 	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	font-size: 12em;
-	left: -.13em;
-	top: -.2em;
-	color: white;
 	line-height: 100%;
+	color: white;
 }
 
 address {
-	margin: 0 0 1em;
+	margin: 0 0 1.5em;
 }
 
 pre {
@@ -135,7 +132,7 @@ body {
 }
 
 blockquote, q {
-	quotes: "“ ”";
+	quotes: "" "";
 }
 
 hr {
@@ -146,7 +143,7 @@ hr {
 }
 
 ul, ol {
-	margin: 0 0 1.5em 0em;
+	margin: 0 0 1.5em;
 }
 
 ul {
@@ -160,7 +157,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: .5em;
 }
 
 dt {
@@ -189,9 +186,9 @@ table {
 	width: 100%;
 }
 
-thead th {
+thread th {
 	border-bottom: 2px solid #bbb;
-	padding-bottom: 0.5em;
+	padding-bottom: .5em;
 }
 
 td,
@@ -200,7 +197,7 @@ th {
 }
 
 th {
-	padding: 0.4em;
+	padding: .4em;
 	text-align: left;
 }
 
@@ -209,7 +206,7 @@ tr {
 }
 
 td {
-	padding: 0.4em;
+	padding: .4em;
 }
 
 th:first-child,
@@ -222,39 +219,57 @@ td:last-child {
 	padding-right: 0;
 }
 
- /**
-  * Alignments
-  */
-
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: #000;
 }
 
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
+a:visited {
+	color: #000;
 }
 
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+a:hover, a:focus, a:active {
+	color: #b51c35;
 }
 
-/**
- * Captions
- */
+a:focus {
+	outline: thin dotted;
+}
 
+a:hover, a:active {
+	outline: 0;
+}
+
+.page-content a,
+.entry-content a,
+.entry-summary a,
+.comment-content a {
+	text-decoration: none;
+	border-bottom: 3px solid #b51c35;
+}
+
+.page-content a:focus, .page-content a:hover,
+.entry-content a:focus,
+.entry-content a:hover,
+.entry-summary a:focus,
+.entry-summary a:hover,
+.comment-content a:focus,
+.comment-content a:hover {
+	color: #b51c35;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: 2em;
 	max-width: 100%;
 	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	font-size: 90%;
 	color: #666666;
+	text-align: center;
 }
 
 .wp-caption a {
@@ -268,13 +283,12 @@ td:last-child {
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.5em 0 1.5em 1em;
+	margin: .5em 0 1.5em 1em;
 }
 
-/**
- * Galleries
- */
-
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
 .gallery {
 	margin: 1.5em 0;
 }
@@ -289,7 +303,6 @@ td:last-child {
 
 .gallery-item img {
 	display: block;
-    margin: 0 auto;
 }
 
 .gallery-item a {
@@ -297,10 +310,13 @@ td:last-child {
 	border-bottom: none;
 }
 
-.gallery-item a:hover,
-.gallery-item a:focus {
+.gallery-item a:hover, .gallery-item a:focus {
 	border-bottom: none;
 	box-shadow: none;
+}
+
+.gallery-item a:hover img, .gallery-item a:focus img {
+	border-color: #b51c35;
 }
 
 .gallery-item a img {
@@ -309,15 +325,9 @@ td:last-child {
 	border: 1px solid #fff;
 }
 
-.gallery-item a:hover img,
-.gallery-item a:focus img {
-	border-color: #c3c3c3;
-}
-
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
-
 
 .gallery-columns-3 .gallery-item {
 	max-width: 33.33%;
@@ -349,10 +359,7 @@ td:last-child {
 
 .gallery-caption {
 	display: block;
-	margin: 0!important;
-	font-family: "Fira Sans", sans-serif;
+	margin: 0;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	border: none;
-    padding: 1em 1em .5em;
-    font-size: 90%!important;
-    line-height: 1.4em;
 }
