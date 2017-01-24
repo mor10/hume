@@ -48,7 +48,7 @@
 			} );
 		} );
 	} );
-	
+
 	wp.customize( 'theme_bg_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-header,.site-footer' ).css( {
@@ -56,7 +56,7 @@
 			} );
 		} );
 	} );
-	
+
 	wp.customize( 'interactive_color', function( value ) {
 		value.bind( function( to ) {
 			$( 'a:hover,a:focus,a:active,.page-content a:focus, .page-content a:hover,.entry-content a:focus,.entry-content a:hover,.entry-summary a:focus,.entry-summary a:hover,.comment-content a:focus,.comment-content a:hover,.cat-links a' ).css( {
@@ -70,5 +70,5 @@
 			} );
 		} );
 	} );
-	
+
 } )( jQuery );
