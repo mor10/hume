@@ -216,7 +216,8 @@ function hume_header_style() {
 			.widget_hume_recent_posts a:hover .title,
 			.widget_hume_recent_posts a:focus .title,
 			.widget_hume_recent_comments a:focus .original-title,
-			.widget_hume_recent_comments a:hover .original-title {
+			.widget_hume_recent_comments a:hover .original-title,
+			.pagination .current {
 				color: <?php echo esc_attr( $interactive_color ); ?>;
 			}
 
@@ -263,7 +264,9 @@ function hume_header_style() {
 			.reply a:hover,
 			.reply a:focus,
 			.comment-form .form-submit input:hover,
-			.comment-form .form-submit input:focus {
+			.comment-form .form-submit input:focus,
+			.pagination a:focus,
+			.pagination a:hover {
 				background-color: <?php echo esc_attr( $interactive_color ); ?>;
 			}
 

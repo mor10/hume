@@ -1,6 +1,6 @@
 .site-content {
 	padding: 1em;
-	
+
 	@media screen and (min-width: $query__small) {
 		padding: 2em;
 	}
@@ -37,7 +37,7 @@
 		}
 
 	}
-	
+
 	.page {
 		&.has-page-sidebar {
 			.hentry {
@@ -54,8 +54,8 @@
 
 
 @media screen and (min-width: $query__medium) {
-	.single {	
-		&.no-sidebar {
+
+		.no-sidebar {
 
 			.post-content__wrap {
 				display: flex;
@@ -71,6 +71,6 @@
 			}
 
 		}
-	}
+	
 }
 

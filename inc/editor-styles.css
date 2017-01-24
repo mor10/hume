@@ -8,7 +8,7 @@ html {
 }
 
 body {
-	max-width: 1080px;
+	max-width: 700px;
 	margin: 0 auto;
 	color: black;
 	font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
@@ -217,7 +217,7 @@ td:first-child {
 th:last-child,
 td:last-child {
 	padding-right: 0;
-} 
+}
 
 /*--------------------------------------------------------------
 ## Links

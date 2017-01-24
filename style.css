@@ -821,6 +821,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+/*
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -829,18 +830,16 @@ a:hover, a:active {
 .comment-content:after,
 .site-content:before,
 .site-content:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
+	@include clearfix;
 }
 
 .clear:after,
 .entry-content:after,
 .comment-content:after,
 .site-content:after {
-	clear: both;
+	@include clearfix-after;
 }
-
+*/
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -884,7 +883,7 @@ a:hover, a:active {
 	}
 	.single.has-sidebar .hentry .post-content,
 	.page .hentry .post-content {
-		width: 60%;
+		width: calc(70% - 2em);
 	}
 	.single.has-sidebar .hentry .widget-area,
 	.page .hentry .widget-area {
@@ -904,7 +903,7 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 900px) {
-	.single.no-sidebar .post-content__wrap {
+	.no-sidebar .post-content__wrap {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -912,10 +911,10 @@ a:hover, a:active {
 		    -ms-flex-pack: justify;
 		        justify-content: space-between;
 	}
-	.single.no-sidebar .post-content__wrap .entry-meta {
+	.no-sidebar .post-content__wrap .entry-meta {
 		width: 20%;
 	}
-	.single.no-sidebar .post-content__wrap .post-content__body {
+	.no-sidebar .post-content__wrap .post-content__body {
 		width: 70%;
 	}
 }
@@ -955,7 +954,7 @@ a:hover, a:active {
 		        flex: 1 0 100%;
 	}
 	.archive-view.has-sidebar .content-area {
-		width: 60%;
+		width: calc(70% - 2em);
 	}
 	.archive-view.has-sidebar .widget-area {
 		width: 30%;

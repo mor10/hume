@@ -42,11 +42,11 @@ get_header(); ?>
 			endwhile;
 
 			the_posts_pagination( array(
-				'prev_text' => hume_get_svg( array( 'icon' => 'arrow-long-left', 'fallback' => true ) ) . __( 'Older', 'hume' ),
-				'next_text' => __( 'Newer', 'hume' ) . hume_get_svg( array( 'icon' => 'arrow-long-right' , 'fallback' => true ) ),
+				'prev_text' => hume_get_svg( array( 'icon' => 'arrow-long-left', 'fallback' => true ) ) . __( 'Newer', 'hume' ),
+				'next_text' => __( 'Older', 'hume' ) . hume_get_svg( array( 'icon' => 'arrow-long-right' , 'fallback' => true ) ),
 				'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'hume' ) . '</span>',
 			));
-			
+
 		?>
 
 		</main><!-- #main -->
@@ -62,4 +62,4 @@ else :
 	get_template_part( 'template-parts/content', 'none' );
 	return;
 
-endif; 
+endif;
