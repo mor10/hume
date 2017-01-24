@@ -18,8 +18,8 @@ if ( have_posts() ) : ?>
 			the_archive_description( '<div class="archive-description">', '</div>' );
 		?>
 	</header><!-- .page-header -->
-	
-<?php 
+
+<?php
 else :
 
 	get_template_part( 'template-parts/content', 'none' );
@@ -44,8 +44,8 @@ endif; ?>
 			endwhile;
 
 			the_posts_pagination( array(
-				'prev_text' => __( 'Previous', 'hume' ),
-				'next_text' => __( 'Next', 'hume' ),
+				'prev_text' => hume_get_svg( array( 'icon' => 'arrow-long-left', 'fallback' => true ) ) . __( 'Newer', 'hume' ),
+				'next_text' => __( 'Older', 'hume' ) . hume_get_svg( array( 'icon' => 'arrow-long-right' , 'fallback' => true ) ),
 				'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'hume' ) . '</span>',
 			));
 
