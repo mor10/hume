@@ -1,6 +1,5 @@
 # hume
-![Course Thumbnail]
-(https://cdn.lynda.com/course/491704/491704-636216313866451494-16x9.jpg)
+
 Built for the LinkedIn Learning and Lynda.com course [WordPress: Building Themes From Scratch Using Underscores](https://www.linkedin.com/learning/wordpress-building-themes-from-scratch-using-underscores-2?u=104), hume is an accessible content-first theme built around beautiful fonts and large images designed and developed by [Morten Rand-Hendriksen](http://mor10.com) for [LinkedIn Learning](https://www.linkedin.com/learning/instructors/725535) and [Lynda.com - a LinkedIn Company](https://lynda.com/mor10).
 ## Features
 
