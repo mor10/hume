@@ -1,38 +1,28 @@
-=== hume ===
+hume
 
-Contributors: automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Built for the LinkedIn Learning and Lynda.com course WordPress: Building Themes From Scratch Using Underscores (https://www.linkedin.com/learning/wordpress-building-themes-from-scratch-using-underscores-2?u=104), hume is an accessible content-first theme built around beautiful fonts and large images designed and developed by Morten Rand-Hendriksen (http://mor10.com) for LinkedIn Learning (https://www.linkedin.com/learning/instructors/725535) and Lynda.com - a LinkedIn Company (https://lynda.com/mor10).
+## Features
 
-Requires at least: 4.0
-Tested up to: 4.5.3
-Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+### Customizer Options
+Extended options available from the Customizer:
 
-A starter theme called hume, or underscores.
+1. Header image on front page
+2. Header background color
+3. Custom logo
+4. Excerpts or full content in index and archive pages
 
-== Description ==
+### Featured Images
+Posts and pages can have Featured Images.
 
-Hi. I'm a starter theme called hume, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+### Widgetized Areas
+1. Sidebar
+2. Footer widgets
+3. Page sidebar
 
-== Installation ==
+### Licenses and External Assets
+hume is distributed under the terms of the GNU GPL v2
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+hume's code base started out as _s (http://underscores.me) as it were on November 28, 2016.
 
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-hume includes support for Infinite Scroll in Jetpack.
-
-== Changelog ==
-
-= 1.0 - May 12 2015 =
-* Initial release
-
-== Credits ==
-
-* Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+### Namesake
+hume is named after philosopher David Hume (https://en.wikipedia.org/wiki/David_Hume).
