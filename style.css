@@ -821,25 +821,27 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-/*
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-content:before,
-.site-content:after {
-	@include clearfix;
+@media screen and (max-width: 900px) {
+	.clear:before,
+	.clear:after,
+	.entry-content:before,
+	.entry-content:after,
+	.comment-content:before,
+	.comment-content:after,
+	.site-content:before,
+	.site-content:after {
+		content: "";
+		display: table;
+		table-layout: fixed;
+	}
+	.clear:after,
+	.entry-content:after,
+	.comment-content:after,
+	.site-content:after {
+		clear: both;
+	}
 }
 
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-content:after {
-	@include clearfix-after;
-}
-*/
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -1230,16 +1232,14 @@ button.dropdown-toggle {
 }
 
 .menu-toggle {
-	position: absolute;
-	top: 0;
-	right: 0;
 	display: block;
+	width: 100%;
 	margin: 1.2em 1.2em 0 0;
 	padding: .6em .8em;
 	font-size: 80%;
 	text-transform: uppercase;
 	color: white;
-	border: 1px solid rgba(255, 255, 255, 0.3);
+	border: 1px solid white;
 }
 
 /* Toggle small menu and children on */

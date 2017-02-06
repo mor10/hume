@@ -1,19 +1,21 @@
-/*
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-content:before,
-.site-content:after {
-	@include clearfix;
+@media screen and (max-width: $query__medium) {
+    .clear:before,
+    .clear:after,
+    .entry-content:before,
+    .entry-content:after,
+    .comment-content:before,
+    .comment-content:after,
+    .site-content:before,
+    .site-content:after {
+    	@include clearfix;
+    }
+
+    .clear:after,
+    .entry-content:after,
+    .comment-content:after,
+    .site-content:after {
+    	@include clearfix-after;
+    }
 }
 
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-content:after {
-	@include clearfix-after;
-}
-*/
+
