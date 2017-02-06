@@ -12,6 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php hume_the_category_list(); ?>
+
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<?php
@@ -34,13 +35,16 @@
 
 	<section class="post-content">
 
+
 		<?php
 		if ( !is_active_sidebar( 'sidebar-1' ) || is_page_template( 'custom-templates/post-nosidebar.php') ) : ?>
+
 		<div class="post-content__wrap">
 			<div class="entry-meta">
 				<?php hume_posted_on(); ?>
 			</div><!-- .entry-meta -->
 			<div class="post-content__body">
+
 		<?php
 		endif; ?>
 
@@ -64,6 +68,7 @@
 		</footer><!-- .entry-footer -->
 
 		<?php
+
 		if ( !is_active_sidebar( 'sidebar-1' ) || is_page_template( 'custom-templates/post-nosidebar.php')) : ?>
 			</div><!-- .post-content__body -->
 		</div><!-- .post-content__wrap -->
@@ -80,4 +85,5 @@
 	</section><!-- .post-content -->
 
 	<?php get_sidebar(); ?>
+
 </article><!-- #post-## -->

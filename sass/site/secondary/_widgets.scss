@@ -256,6 +256,7 @@
 	margin: 0 auto;
 
 	@media screen and (min-width: $size__max-width) {
+
 		/* Use flex to create a responsive layout */
 		display: flex;
 		flex-wrap: wrap;
@@ -282,6 +283,7 @@
 	@media screen and (min-width: 90em ) {
 		max-width: 70em;
 	}
+
 }
 
 /* Custom Recent Comments and Recent Posts widgets */
@@ -292,6 +294,7 @@
 		color: black;
 	}
 }
+
 .widget_hume_recent_comments li,
 .widget_hume_recent_posts li {
 	position: relative;
@@ -429,6 +432,7 @@
 	a:focus .title {
 		text-decoration: underline;
 	}
+
 }
 
 .footer-widgets .widget_hume_recent_posts {
@@ -447,4 +451,5 @@
 			border-bottom: none;
 		}
 	}
+
 }

@@ -141,6 +141,7 @@
 		}
 
 	}
+
 }
 
 /* Single Post Featured Images */
@@ -167,12 +168,12 @@
 		margin-right: calc( ((-100vw + #{$size__max-width})/2) - 2em );
 		margin-left: calc( ((-100vw + #{$size__max-width})/2) - 2em );
 	}
+
 	img {
 		display: block;
 		margin: 0 auto;
 	}
 }
-
 
 .page-content,
 .entry-content,

@@ -15,6 +15,7 @@ function hume_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+
 	/**
 	 * Custom Customizer Customizations
 	 */
@@ -32,15 +33,14 @@ function hume_customize_register( $wp_customize ) {
 		new WP_Customize_Color_Control(
 			$wp_customize,
 			'theme_bg_color',
-				array(
-					'label'		=> __( 'Header and footer background color', 'hume'),
-					'section'	=> 'colors',
-					'settings'	=> 'theme_bg_color'
-				)
+			array(
+				'label'		=> __( 'Header and footer background color', 'hume'),
+				'section'	=> 'colors',
+				'settings'	=> 'theme_bg_color'
+			)
 		)
 	);
 
-	// Create interactive color setting
 	$wp_customize->add_setting( 'interactive_color' ,
 		array(
 			'default'			=> '#b51c35',
@@ -278,6 +278,8 @@ function hume_header_style() {
 			}
 		</style>
 	<?php
+
 	}
+
 }
 endif;

@@ -43,6 +43,7 @@
 			</div><!-- .entry-meta -->
 			<?php
 			endif; ?>
+
 			<div class="post-content__body">
 				<div class="entry-content">
 					<?php

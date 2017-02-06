@@ -100,7 +100,6 @@ function hume_fonts_url() {
 		$font_families[] = 'PT Serif:400,400i,700,700i';
 	}
 
-
 	if ( in_array( 'on', array($source_sans_pro, $pt_serif) ) ) {
 
 		$query_args = array(

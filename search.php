@@ -16,7 +16,7 @@ if ( have_posts() ) : ?>
 		<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'hume' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 	</header><!-- .page-header -->
 
-<?php 
+<?php
 else :
 
 	get_template_part( 'template-parts/content', 'none' );
